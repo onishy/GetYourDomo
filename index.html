@@ -1,0 +1,48 @@
+<html>
+<style>
+    canvas#domo-canvas {
+        width: 300px;
+        height: 300px;
+    }
+</style>
+<body>
+    <h1>Make your own domo!!</h1>
+    <canvas id="domo-canvas" width=300 height=300></canvas>
+    <div>
+        <input type="color" id="bg-color" name="bg-color"
+               value="#814b2f">
+        <label for="bg-color">Choose Color</label>
+    </div>
+    <input type="button" id="download" value="Download"></input>
+</body>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+    var canvas = document.getElementById('domo-canvas');
+    var ctx = canvas.getContext('2d');
+    var img = new Image();
+    var defaultColor = '#814b2f';
+    img.src = 'domo.svg';
+
+    function drawDomo(bgColor) {
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0)
+    }
+
+    img.onload = function() {
+        drawDomo(defaultColor);
+    }
+
+    $('#bg-color').on('change', function() {
+        var color = $('#bg-color').val();
+        drawDomo(color);
+    });
+
+    $('#download').on('click', function() {
+        let link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "your-domo.png";
+        link.click();
+    })
+</script>
+</html>

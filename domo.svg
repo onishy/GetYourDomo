@@ -1,0 +1,30 @@
+<svg version="3.1"
+     id="domo"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 400 400" >
+<defs>
+    <clipPath id="mouthClip">
+        <rect x="75" y="155" width="250" height="190" rx="29" ry="29" /> 
+    </clipPath>
+    <polygon id="top-teeth" points="75,150 140,150 107,190" rx="35" ry="35" fill="white" stroke="black" stroke-width="10" />
+    <polygon id="bottom-teeth" points="75,350 140,350 107,310" rx="35" ry="35" fill="white" stroke="black" stroke-width="10" />
+</defs>
+
+<circle id="left_eye" cx="75" cy="75" r="25" />
+<circle id="right_eye" cx="325" cy="75" r="25" />
+
+<rect id="mouth" x="70" y="150" width="260" height="200" rx="35" ry="35" fill="#d80b18" stroke="black" stroke-width="10" />
+<g clip-path="url(#mouthClip)">
+    <use xlink:href="#top-teeth" x="0" />
+    <use xlink:href="#top-teeth" x="60" />
+    <use xlink:href="#top-teeth" x="120" />
+    <use xlink:href="#top-teeth" x="180" />
+
+    <use xlink:href="#bottom-teeth" x="0" />
+    <use xlink:href="#bottom-teeth" x="60" />
+    <use xlink:href="#bottom-teeth" x="120" />
+    <use xlink:href="#bottom-teeth" x="180" />
+</g>
+
+</svg>
